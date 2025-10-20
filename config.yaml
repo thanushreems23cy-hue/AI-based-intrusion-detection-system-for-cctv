@@ -1,0 +1,89 @@
+
+# AI-Based Intrusion Detection System - Configuration File
+
+# ============================================
+# VIDEO SOURCE CONFIGURATION
+# ============================================
+
+# Source type: 'webcam', 'video_file', or 'rtsp_url'
+source: "webcam"
+
+# Path to video file (if source is 'video_file')
+# Example: "data/sample_video.mp4"
+video_path: null
+
+# RTSP URL for IP cameras (if source is 'rtsp_url')
+# Example: "rtsp://192.168.1.100:554/stream"
+rtsp_url: null
+
+# ============================================
+# DETECTION SETTINGS
+# ============================================
+
+# Confidence threshold for human detection (0.0 - 1.0)
+# Lower = more sensitive, Higher = fewer false alarms
+confidence_threshold: 0.5
+
+# Anomaly score threshold (0.0 - 1.0)
+# Lower = more sensitive, Higher = fewer false alarms
+anomaly_threshold: 0.6
+
+# Process every N frames (skip frames for performance)
+skip_frames: 2
+
+# ============================================
+# VIDEO PROCESSING
+# ============================================
+
+# Frame width (pixels)
+frame_width: 640
+
+# Frame height (pixels)
+frame_height: 480
+
+# ============================================
+# ALERT CONFIGURATION
+# ============================================
+
+# Alert type: 'console', 'email', or 'both'
+alert_type: "console"
+
+# Email configuration (required if alert_type is 'email' or 'both')
+email_config:
+  # Sender Gmail address
+  sender: ""
+  
+  # Gmail app password (NOT your regular password)
+  # Get it from: https://myaccount.google.com/apppasswords
+  password: ""
+  
+  # Recipient email address
+  recipient: ""
+
+# ============================================
+# LOGGING CONFIGURATION
+# ============================================
+
+# Enable activity logging
+enable_logging: true
+
+# Log file path
+log_file: "logs/activity_log.txt"
+
+# ============================================
+# PRESET SENSITIVITY LEVELS
+# ============================================
+# Use with --sensitivity flag: high, medium, low
+#
+# High Sensitivity:
+#   confidence_threshold: 0.3
+#   anomaly_threshold: 0.4
+#
+# Medium Sensitivity (default):
+#   confidence_threshold: 0.5
+#   anomaly_threshold: 0.6
+#
+# Low Sensitivity:
+#   confidence_threshold: 0.7
+#   anomaly_threshold: 0.8
+# ============================================
